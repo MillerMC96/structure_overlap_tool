@@ -3,7 +3,10 @@
 //returns the translation matrix between two atoms
 transform_mat get_translation_matrix(vector& atom1, vector& atom2)
 {
-    return transform_mat(1.0);
+    //initialize the translation matrix as an identity matrix
+    transform_mat translation_mat = transform_mat(1.0);
+
+    return translation_mat;
 }
 
 //returns the rotation matrix between two atoms about a given pivot
