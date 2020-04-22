@@ -31,4 +31,6 @@ class atom
         float x_coor;
         float y_coor;
         float z_coor;
+        int ID;
+        int model;
 }
