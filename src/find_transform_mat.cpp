@@ -5,6 +5,14 @@ transform_mat get_translation_matrix(vector& atom1, vector& atom2)
 {
     //initialize the translation matrix as an identity matrix
     transform_mat translation_mat = transform_mat(1.0);
+    //delta x y and z
+    float delta_x, delta_y, delta_z;
+
+    delta_x = atom2[0] - atom1[0];
+    delta_y = atom2[1] - atom1[1];
+    delta_z = atom2[2] - atom1[2];
+
+    translation_mat = glm::translate(glm:mat4(), glm::vec3(delta_x, delta_y, delta_z));
 
     return translation_mat;
 }
