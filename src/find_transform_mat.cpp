@@ -1,5 +1,7 @@
 #include <iostream>
 #include <glm/glm.hpp>
+#include <vector>
+#include <fstream>
 
 #define GLM_FORCE_CTOR_INIT //initialize matrix to 0
 
@@ -33,4 +35,12 @@ class atom
         float z_coor;
         int ID;
         int model;
+}
+
+int main(int argc, char* argv[])
+{
+    //array of atoms
+    std::vector<atom&> atom_arr;
+    //file containing atoms of interest
+    std::fstream atom_file;
 }
