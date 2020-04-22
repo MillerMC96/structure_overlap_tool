@@ -12,7 +12,7 @@ transform_mat get_translation_matrix(vector& atom1, vector& atom2)
     delta_y = atom2[1] - atom1[1];
     delta_z = atom2[2] - atom1[2];
 
-    translation_mat = glm::translate(glm:mat4(), glm::vec3(delta_x, delta_y, delta_z));
+    translation_mat = glm::translate(glm::mat4(), glm::vec3(delta_x, delta_y, delta_z));
 
     return translation_mat;
 }
