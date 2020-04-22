@@ -1,6 +1,7 @@
 #include <iostream>
 #include <glm/glm.hpp>
 #include <vector>
+#include <sstream>
 #include <fstream>
 #include <string>
 
@@ -43,7 +44,7 @@ int main(int argc, char* argv[])
     //array of atoms
     std::vector<atom> atom_arr;
     //file containing atoms of interest
-    std::fstream atom_file;
+    std::ifstream atom_file;
     atom_file.open(argv[1]);
 
     //every line of file
@@ -55,7 +56,12 @@ int main(int argc, char* argv[])
     float x_coor, y_coor, z_coor;
         
     while (std::getline(atom_file, line_of_data)) {
-        
+        //skip the comments
+        if (line_of_data[0] == '#')
+            continue;
+        //parse input
+        std::stringstream iss(line_of_data);
+        iss >> atom_ID >> model_number >> x_coor >> y_coor >> z_coor;
+        atom_arr.push_back(atom(atom_ID, model_number, x_coor, y_coor, z_coor));
     }
-
 }
