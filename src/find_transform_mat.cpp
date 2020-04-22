@@ -2,6 +2,7 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include <fstream>
+#include <string>
 
 #define GLM_FORCE_CTOR_INIT //initialize matrix to 0
 
@@ -45,5 +46,16 @@ int main(int argc, char* argv[])
     std::fstream atom_file;
     atom_file.open(argv[1]);
 
+    //every line of file
+    std::string line_of_data;
+    
+    //atom ID and model number
+    int atom_ID, model_number;
+    //coordinates of an atom
+    float x_coor, y_coor, z_coor;
+        
+    while (std::getline(atom_file, line_of_data)) {
+        
+    }
 
 }
