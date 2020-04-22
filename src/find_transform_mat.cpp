@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <fstream>
+#include <string>
 #include "find_transform_mat.h"
 #include "atom.h"
 
