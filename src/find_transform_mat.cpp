@@ -1,4 +1,5 @@
 #include "find_transform_mat.h"
+#include "atom.h"
 
 int main(int argc, char* argv[])
 {
