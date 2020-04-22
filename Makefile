@@ -26,11 +26,10 @@ CPPFLAGS += -std=c++14
 PROJ_NAME = find_transform_mat
 
 PROJ_OBJS = $(OBJ_DIR)/find_transform_mat.o
-MAIN_OBJS = $(OBJ_DIR)/main.o
 
 all: directories $(BIN_DIR)/$(PROJ_NAME)
-$(BIN_DIR)/$(PROJ_NAME): directories $(PROJ_OBJS) $(MAIN_OBJS)
-	$(CXX) $(PROJ_OBJS) $(MAIN_OBJS) -o $(BIN_DIR)/$(PROJ_NAME) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
+$(BIN_DIR)/$(PROJ_NAME): directories $(PROJ_OBJS) 
+	$(CXX) $(PROJ_OBJS) -o $(BIN_DIR)/$(PROJ_NAME) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $(INCLUDE) -c $< -o $@
 .PHONY: directories
