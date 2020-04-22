@@ -1,34 +1,13 @@
-#include <iostream>
-#include <vector>
-#include <sstream>
-#include <fstream>
-#include <string>
 #include "find_transform_mat.h"
-#include "atom.h"
 
-int main(int argc, char* argv[])
+//returns the translation matrix between two atoms
+transform_mat get_translation_matrix(vector& atom1, vector& atom2)
 {
-    //array of atoms
-    std::vector<atom> atom_arr;
-    //file containing atoms of interest
-    std::ifstream atom_file;
-    atom_file.open(argv[1]);
+    return transform_mat(1.0);
+}
 
-    //every line of file
-    std::string line_of_data;
-    
-    //atom ID and model number
-    int atom_ID, model_number;
-    //coordinates of an atom
-    float x_coor, y_coor, z_coor;
-        
-    while (std::getline(atom_file, line_of_data)) {
-        //skip the comments
-        if (line_of_data[0] == '#')
-            continue;
-        //parse input
-        std::stringstream iss(line_of_data);
-        iss >> atom_ID >> model_number >> x_coor >> y_coor >> z_coor;
-        atom_arr.push_back(atom(atom_ID, model_number, x_coor, y_coor, z_coor));
-    }
+//returns the rotation matrix between two atoms about a given pivot
+transform_mat get_rot_mat_about_an_axis(vector& atom1, vector& atom2, vector& pivot_atom)
+{
+    return transform_mat(1.0);
 }
