@@ -5,13 +5,13 @@
 
 #define GLM_FORCE_CTOR_INIT //initialize matrix to 0
 
-typedef glm::mat4 transform_mat
-typedef glm::vec4 vector
+typedef glm::mat4 transform_mat;
+typedef glm::vec4 vector;
 
 class atom
 {
     public:
-        atom(int atom_ID, int model_num
+        atom(int atom_ID, int model_num,
              float x_coordinate, float y_coordinate, float z_coordinate)
         {
             x_coor = x_coordinate;
@@ -35,12 +35,15 @@ class atom
         float z_coor;
         int ID;
         int model;
-}
+};
 
 int main(int argc, char* argv[])
 {
     //array of atoms
-    std::vector<atom&> atom_arr;
+    std::vector<atom> atom_arr;
     //file containing atoms of interest
     std::fstream atom_file;
+    atom_file.open(argv[1]);
+
+
 }
