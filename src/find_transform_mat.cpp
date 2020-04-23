@@ -20,6 +20,19 @@ transform_mat get_translation_matrix(vector& atom1, vector& atom2)
 //returns the rotation matrix between two atoms about a given pivot
 transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pivot_atom)
 {
+    //initialize the rotation matrix as an identity matrix
+    transform_mat rotation_mat = transform_mat(1.0);
+    //two vectors that determine the rotation axis
+    vector vec1 = vector(0.0);
+    vector vec2 = vector(0.0);
+    //rotation axis
+    vector axis = vector(0.0);
+
+    //find the two vectors
+
+    //find the rotation axis
+
+    //find the final rotation matrix
 
     return transform_mat(1.0);
 }
