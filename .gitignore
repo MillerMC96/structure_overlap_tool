@@ -1,5 +1,5 @@
 structures
 bin
 obj
-tests/bin
+tests/test_bin
 tests/obj
