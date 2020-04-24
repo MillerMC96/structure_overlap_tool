@@ -8,10 +8,10 @@ OBJCOPY = objcopy
 OBJDUMP = objdump
 STRIP = strip
 
-INC_DIR = ../include
-SRC_DIR = ./
-OBJ_DIR = ../obj
-BIN_DIR = ../bin
+INC_DIR = ./include
+SRC_DIR = ./src
+OBJ_DIR = ./obj
+BIN_DIR = ./test_bin
 
 DEBUG_MODE=TRUE
 PKGS =
@@ -23,11 +23,10 @@ endif
 INCLUDE += -I $(INC_DIR)
 CFLAGS += -Wall -lglut -lGL
 CPPFLAGS += -std=c++14
-PROJ_NAME = tests 
+PROJ_NAME = test_find_transform_mat
 
-PROJ_OBJS = $(OBJ_DIR)/test_find_transform_mat.o
-
-MAIN_OBJS = $(OBJ_DIR)/tests.o
+PROJ_OBJS = $(OBJ_DIR)/find_transform_mat.o $(OBJ_DIR)/test_find_transform_mat.o
+MAIN_OBJS = $(OBJ_DIR)/test_find_transform_mat.o
 
 all: directories $(BIN_DIR)/$(PROJ_NAME)
 $(BIN_DIR)/$(PROJ_NAME): directories $(PROJ_OBJS) $(MAIN_OBJS)
