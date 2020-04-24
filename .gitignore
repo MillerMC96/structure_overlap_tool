@@ -1,3 +1,5 @@
 structures
 bin
 obj
+tests/bin
+tests/obj
