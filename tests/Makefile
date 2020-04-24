@@ -25,7 +25,7 @@ CFLAGS += -Wall -lglut -lGL
 CPPFLAGS += -std=c++14
 PROJ_NAME = test_find_transform_mat
 
-PROJ_OBJS = $(OBJ_DIR)/find_transform_mat.o $(OBJ_DIR)/test_find_transform_mat.o
+PROJ_OBJS = $(OBJ_DIR)/find_transform_mat.o 
 MAIN_OBJS = $(OBJ_DIR)/test_find_transform_mat.o
 
 all: directories $(BIN_DIR)/$(PROJ_NAME)

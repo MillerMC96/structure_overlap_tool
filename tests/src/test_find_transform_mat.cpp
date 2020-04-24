@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "test_find_transform_mat.h"
+#include "find_transform_mat.h"
 #include "atom.h"
 
 //testing get_translation_matrix
