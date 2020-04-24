@@ -3,8 +3,15 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include "find_transform_mat.h"
+#include "tests.h"
 #include "atom.h"
+
+//testing find_transform_mat.cpp
+int test_find_transform_mat(void)
+{
+
+    return 0;
+}
 
 int main(int argc, char* argv[])
 {
