@@ -26,19 +26,27 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     vector vec1 = vector(0.0);
     vector vec2 = vector(0.0);
     //rotation axis
-    vector axis = vector(0.0);
+    glm::vec3 axis = vector(0.0);
 
     //find the two vectors
+    vec1 = atom1 - pivot_atom;
+    vec2 = atom2 - pivot_atom;
+    
+    //two vectors in 3d format for cross product calculation
+    glm::vec3 vec1_3d = glm::vec3(vec1);
+    glm::vec3 vec2_3d = glm::vec3(vec2);
 
     //find the rotation axis
+    axis = glm::cross(vec1_3d, vec2_3d);
 
     //find the final rotation matrix
 
-    return transform_mat(1.0);
+    return rotation_mat;
 }
 
 //returns the rotation matrix between two atoms about a given axis
 transform_mat get_rot_mat_about_an_axis(vector& atom1, vector& atom2, std::vector<vector>& axis_atoms)
 {
 
+    return transform_mat(1.0);
 }
