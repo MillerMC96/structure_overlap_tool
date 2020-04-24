@@ -43,7 +43,7 @@ int test_get_rot_mat_about_an_axis(void)
     return 0;
 }
 
-int main(int argc, char* argv[])
+int main(void)
 {
     test_get_translation_matrix();
 }
