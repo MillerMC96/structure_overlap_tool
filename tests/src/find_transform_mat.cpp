@@ -25,8 +25,14 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     //two vectors that determine the rotation axis
     vector vec1 = vector(0.0);
     vector vec2 = vector(0.0);
+    float vec1_length, vec2_length;
+
     //rotation axis
     glm::vec3 axis = vector(0.0);
+    float axis_length;
+
+    //rotation angle
+    float rotation_angle;
 
     //find the two vectors
     vec1 = atom1 - pivot_atom;
@@ -36,10 +42,19 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     glm::vec3 vec1_3d = glm::vec3(vec1);
     glm::vec3 vec2_3d = glm::vec3(vec2);
 
-    //find the rotation axis
+    //find the rotation axis and its length
     axis = glm::cross(vec1_3d, vec2_3d);
+    axis_length = glm::length(axis);
+
+    //find the length of two vectors
+    vec1_length = glm::length(vec1);
+    vec2_length = glm::length(vec2);
+
+    //find the rotation angle
+    rotation_angle = std::asin(axis_length / (vec1_length * vec2_length));
 
     //find the final rotation matrix
+
 
     return rotation_mat;
 }
