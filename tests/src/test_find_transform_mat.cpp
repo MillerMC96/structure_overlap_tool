@@ -46,4 +46,8 @@ int test_get_rot_mat_about_an_axis(void)
 int main(void)
 {
     test_get_translation_matrix();
+
+    test_get_rot_mat_about_an_atom();
+
+    test_get_rot_mat_about_an_axis();
 }
