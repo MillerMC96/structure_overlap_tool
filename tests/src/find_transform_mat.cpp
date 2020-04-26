@@ -54,7 +54,15 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     rotation_angle = std::asin(axis_length / (vec1_length * vec2_length));
 
     //find the final rotation matrix
-
+    //intialize all necessary matrices
+    transform_mat T_inv = transform_mat(1.0);
+    transform_mat Rx_inv = transform_mat(1.0);
+    transform_mat Ry_inv = transform_mat(1.0);
+    transform_mat Rz = transform_mat(1.0);
+    transform_mat Ry = transform_mat(1.0);
+    transform_mat Rx = transform_mat(1.0);
+    transform_mat T = transform_mat(1.0);
+    //first do T^-1
 
     return rotation_mat;
 }
