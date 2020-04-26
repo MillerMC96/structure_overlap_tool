@@ -46,6 +46,9 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     axis = glm::cross(vec1_3d, vec2_3d);
     axis_length = glm::length(axis);
 
+    //unit vector of rotation axis
+    vector axis_unit = glm::normalize(axis);
+
     //find the length of two vectors
     vec1_length = glm::length(vec1);
     vec2_length = glm::length(vec2);
@@ -63,6 +66,7 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     transform_mat Rx = transform_mat(1.0);
     transform_mat T = transform_mat(1.0);
     //first do T^-1
+    T_inv[3] = 
 
     return rotation_mat;
 }
