@@ -46,8 +46,8 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     axis = glm::cross(vec1_3d, vec2_3d);
     axis_length = glm::length(axis);
 
-    //unit vector of rotation axis
-    vector axis_unit = glm::normalize(axis);
+    //homogenized unit vector of rotation axis
+    vector axis_unit = vector(glm::normalize(axis), 1.0);
 
     //find the length of two vectors
     vec1_length = glm::length(vec1);
@@ -57,6 +57,8 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     rotation_angle = std::asin(axis_length / (vec1_length * vec2_length));
 
     //find the final rotation matrix
+    //magnitude of the projection of rotation axis onto the yz plane
+    float yz_proj = sqrt(pow(axix_unit[1], 2) + pow(axis_unit[2], 2));
     //intialize all necessary matrices
     transform_mat T_inv = transform_mat(1.0);
     transform_mat Rx_inv = transform_mat(1.0);
@@ -66,7 +68,13 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     transform_mat Rx = transform_mat(1.0);
     transform_mat T = transform_mat(1.0);
     //first do T^-1
-    T_inv[3] = 
+    T_inv[3] = -pivot_atom;
+    //Rx^-1
+    //if the axis is not along with the x-axis
+    if (yz_proj != 0) {
+        Rx_inv[1] = vector(0, axis_unit[2] / yz_proj, -axis_unit[1] / yz_proj, 0);
+        Rx_inv[2] = vector(0, axis_unit[1] / yz_proj, axis_unit[2] / yz_proj, 0);
+    }
 
     return rotation_mat;
 }
