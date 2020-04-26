@@ -69,12 +69,15 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     transform_mat T = transform_mat(1.0);
     //first do T^-1
     T_inv[3] = -pivot_atom;
-    //Rx^-1
+    //Rx^-1 and Rx
     //if the axis is not along with the x-axis
     if (yz_proj != 0) {
         Rx_inv[1] = vector(0, axis_unit[2] / yz_proj, -axis_unit[1] / yz_proj, 0);
         Rx_inv[2] = vector(0, axis_unit[1] / yz_proj, axis_unit[2] / yz_proj, 0);
+        Rx[1] = vector(0, axis_unit[2] / yz_proj, axis_unit[1] / yz_proj, 0);
+        Rx[2] = vector(0, -axis_unit[1] / yz_proj, axis_unit[2] / yz_proj, 0);
     }
+    //Ry^-1 and Ry
 
     return rotation_mat;
 }
