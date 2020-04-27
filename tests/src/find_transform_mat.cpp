@@ -67,8 +67,9 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     transform_mat Ry = transform_mat(1.0);
     transform_mat Rx = transform_mat(1.0);
     transform_mat T = transform_mat(1.0);
-    //first do T^-1
-    T_inv[3] = -pivot_atom;
+    //first do T^-1 and T
+    T_inv[3] = pivot_atom;
+    T[3] = -pivot_atom;
     //Rx^-1 and Rx
     //if the axis is not along with the x-axis
     if (yz_proj != 0) {
