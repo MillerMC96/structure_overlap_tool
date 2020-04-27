@@ -87,6 +87,8 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     //Rz
     Rz[0] = vector(cos(rotation_angle), sin(rotation_angle), 0, 0);
     Rz[1] = vector(-sin(rotation_angle), cos(rotation_angle), 0, 0);
+    
+    rotation_mat = T_inv * Rx_inv * Ry_inv * Rz * Ry * Rx * T;
 
     return rotation_mat;
 }
