@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include "find_transform_mat.h"
 #include "atom.h"
@@ -38,8 +39,8 @@ int test_get_rot_mat_about_an_atom(void)
 
     transform_mat rot_mat = get_rot_mat_about_an_atom(atom1, atom2, pivot);
     vector result = rot_mat * atom1;
-    std::cout << result[0] << " " << result[1] << " " << result[2] << " "
-    << result[3] << std::endl;
+    std::cout << std::fixed << std::setprecision(3) << result[0] << " " 
+    << result[1] << " " << result[2] << " " << result[3] << std::endl;
 
     return 0;
 }
