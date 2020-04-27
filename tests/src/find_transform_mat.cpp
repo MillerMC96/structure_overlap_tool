@@ -58,7 +58,7 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
 
     //find the final rotation matrix
     //magnitude of the projection of rotation axis onto the yz plane
-    float yz_proj = sqrt(pow(axix_unit[1], 2) + pow(axis_unit[2], 2));
+    float yz_proj = sqrt(pow(axis_unit[1], 2) + pow(axis_unit[2], 2));
     //intialize all necessary matrices
     transform_mat T_inv = transform_mat(1.0);
     transform_mat Rx_inv = transform_mat(1.0);
