@@ -32,6 +32,14 @@ int test_get_translation_matrix(void)
 //testing get_rot_mat_about_an_atom
 int test_get_rot_mat_about_an_atom(void)
 {
+    vector atom1 = vector(0.0, -1.0, 0.0, 1.0);
+    vector atom2 = vector(0.0, 1.0, 0.0, 1.0);
+    vector pivot = vector(0.0, 0.0, sqrt(3), 1.0);
+
+    transform_mat rot_mat = get_rot_mat_about_an_atom(atom1, atom2, pivot);
+    vector result = rot_mat * atom1;
+    std::cout << result[0] << " " << result[1] << " " << result[2] << " "
+    << result[3] << std::endl;
 
     return 0;
 }
