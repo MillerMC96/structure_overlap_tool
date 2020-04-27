@@ -41,6 +41,7 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     //two vectors in 3d format for cross product calculation
     glm::vec3 vec1_3d = glm::vec3(vec1);
     glm::vec3 vec2_3d = glm::vec3(vec2);
+    glm::vec3 pivot_3d = glm::vec3(pivot_atom);
 
     //find the rotation axis and its length
     axis = glm::cross(vec1_3d, vec2_3d);
@@ -69,7 +70,7 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
     transform_mat T = transform_mat(1.0);
     //first do T^-1 and T
     T_inv[3] = pivot_atom;
-    T[3] = -pivot_atom;
+    T[3] = vector(-pivot_3d, 1.0);
     //Rx^-1 and Rx
     //if the axis is not along with the x-axis
     if (yz_proj != 0) {
