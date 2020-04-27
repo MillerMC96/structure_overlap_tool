@@ -78,6 +78,11 @@ transform_mat get_rot_mat_about_an_atom(vector& atom1, vector& atom2, vector& pi
         Rx[2] = vector(0, -axis_unit[1] / yz_proj, axis_unit[2] / yz_proj, 0);
     }
     //Ry^-1 and Ry
+    Ry_inv[0] = vector(yz_proj, 0, -axis_unit[0], 0);
+    Ry_inv[2] = vector(axis_unit[0], 0, yz_proj, 0);
+
+    Ry[0] = vector(yz_proj, 0, axis_unit[0], 0);
+    Ry[2] = vector(-axis_unit[0], 0, yz_proj, 0);
 
     return rotation_mat;
 }
